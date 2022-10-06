@@ -1,0 +1,10 @@
+C:\Users\andre\source\repos\ProgettoAP\Server\bin\Debug\Server.exe.config
+C:\Users\andre\source\repos\ProgettoAP\Server\bin\Debug\Server.exe
+C:\Users\andre\source\repos\ProgettoAP\Server\bin\Debug\Server.pdb
+C:\Users\andre\source\repos\ProgettoAP\Server\obj\Debug\Server.csprojAssemblyReference.cache
+C:\Users\andre\source\repos\ProgettoAP\Server\obj\Debug\Server.exe
+C:\Users\andre\source\repos\ProgettoAP\Server\obj\Debug\Server.pdb
+C:\Users\Ale\Desktop\ProgettoAP\Server\obj\Debug\Server.csproj.AssemblyReference.cache
+C:\Users\Ale\Desktop\ProgettoAP\Server\obj\Debug\Server.csproj.CoreCompileInputs.cache
+C:\Users\Ale\Desktop\ProgettoAP\Server\obj\Debug\Server.exe
+C:\Users\Ale\Desktop\ProgettoAP\Server\obj\Debug\Server.pdb

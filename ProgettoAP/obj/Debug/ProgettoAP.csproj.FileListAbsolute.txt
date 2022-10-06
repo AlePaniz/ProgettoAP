@@ -1,0 +1,15 @@
+C:\Users\andre\source\repos\ProgettoAP\ProgettoAP\bin\Debug\ProgettoAP.exe.config
+C:\Users\andre\source\repos\ProgettoAP\ProgettoAP\bin\Debug\ProgettoAP.exe
+C:\Users\andre\source\repos\ProgettoAP\ProgettoAP\bin\Debug\ProgettoAP.pdb
+C:\Users\andre\source\repos\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csprojAssemblyReference.cache
+C:\Users\andre\source\repos\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Properties.Resources.resources
+C:\Users\andre\source\repos\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.GenerateResource.cache
+C:\Users\andre\source\repos\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.exe
+C:\Users\andre\source\repos\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.pdb
+C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.AssemblyReference.cache
+C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoRDF.Login.resources
+C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Properties.Resources.resources
+C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.GenerateResource.cache
+C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CoreCompileInputs.cache
+C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.exe
+C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.pdb
