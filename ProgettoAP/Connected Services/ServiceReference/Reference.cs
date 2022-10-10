@@ -15,11 +15,17 @@ namespace ProgettoAP.ServiceReference {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReference.IDBService")]
     public interface IDBService {
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/DoWork", ReplyAction="http://tempuri.org/IDBService/DoWorkResponse")]
-        void DoWork();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Connessione", ReplyAction="http://tempuri.org/IDBService/ConnessioneResponse")]
+        void Connessione();
         
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/DoWork", ReplyAction="http://tempuri.org/IDBService/DoWorkResponse")]
-        System.Threading.Tasks.Task DoWorkAsync();
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Connessione", ReplyAction="http://tempuri.org/IDBService/ConnessioneResponse")]
+        System.Threading.Tasks.Task ConnessioneAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Login", ReplyAction="http://tempuri.org/IDBService/LoginResponse")]
+        bool Login(string user, string psw, bool organizzatore);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Login", ReplyAction="http://tempuri.org/IDBService/LoginResponse")]
+        System.Threading.Tasks.Task<bool> LoginAsync(string user, string psw, bool organizzatore);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -49,12 +55,20 @@ namespace ProgettoAP.ServiceReference {
                 base(binding, remoteAddress) {
         }
         
-        public void DoWork() {
-            base.Channel.DoWork();
+        public void Connessione() {
+            base.Channel.Connessione();
         }
         
-        public System.Threading.Tasks.Task DoWorkAsync() {
-            return base.Channel.DoWorkAsync();
+        public System.Threading.Tasks.Task ConnessioneAsync() {
+            return base.Channel.ConnessioneAsync();
+        }
+        
+        public bool Login(string user, string psw, bool organizzatore) {
+            return base.Channel.Login(user, psw, organizzatore);
+        }
+        
+        public System.Threading.Tasks.Task<bool> LoginAsync(string user, string psw, bool organizzatore) {
+            return base.Channel.LoginAsync(user, psw, organizzatore);
         }
     }
 }

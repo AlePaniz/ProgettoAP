@@ -17,18 +17,38 @@ namespace Server.Models
         public static string ConnectionString => connectionString;
         public static MySqlConnection Connessione { get => connessione; set => connessione = value; }
 
-        public static void ReadingQuery(string q)
+        public static bool ReadingQuery(string q)
         {
             try
             {
                 using (MySqlCommand cmd = Connessione.CreateCommand())
                 {
+                    cmd.CommandText = q;
+
+                    using (MySqlDataReader reader = cmd.ExecuteReader())
+                    {
+                        int cont = 0;
+
+                        while (reader.Read())
+                            cont++;
+
+                        if (cont != 0)
+                            return true;
+
+                        else
+                            return false;
+                    }
 
                 }
             }
-            catch
+            catch(Exception ex)
             {
-
+                Console.WriteLine("ERRORE!!! Metodo EseguiQuery_Lettura in InterazioneDB: " + ex.ToString());
+                Console.ReadLine();
             }
+
+            return false;
+        }
+
     }
 }

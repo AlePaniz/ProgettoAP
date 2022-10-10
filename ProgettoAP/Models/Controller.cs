@@ -12,7 +12,11 @@ namespace ProgettoAP.Models
 
         public static bool EffettuaLogin(string user, string psw)
         {
-            if(Sessione.ServerDB.)
+            if (Sessione.ServerDB.Login(user, psw, true))
+                return true;
+
+            else
+                return false;
         }
     }
 }

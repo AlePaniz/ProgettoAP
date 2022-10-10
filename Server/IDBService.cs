@@ -16,6 +16,6 @@ namespace Server
 
 
         [OperationContract]
-        bool Login(string user, string psw);
+        bool Login(string user, string psw, bool organizzatore);
     }
 }

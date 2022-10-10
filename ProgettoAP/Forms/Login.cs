@@ -1,98 +1,52 @@
-﻿using MySql.Data.MySqlClient;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ProgettoRDF
+namespace ProgettoAP.Forms
 {
     public partial class Login : Form
     {
-        myDBconnection con = new myDBconnection();
-        DataTable dt = new DataTable();
-        DataTable id = new DataTable();
-        DataTable dataTable = new DataTable();
-
-        public static string emailIN, passwordIN;
-
         public Login()
         {
             InitializeComponent();
-            con.Connect();
-            this.Text = string.Empty;                                                   //QUESTI COMANDI PERMETTONO DI TRASCINARE LA SCHERMATA PRINCIPALE ATTRAVERSO IL PANNELLO IN CUI E' PRESENTE IL TITOLO DI OGNI PAGINA
-            this.ControlBox = false;
-            this.MaximizedBounds = Screen.FromHandle(this.Handle).WorkingArea;
         }
 
-        [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]                        //UTILIZZATI PER NASCONDERE LA BARRA IN ALTO
-        private extern static void ReleaseCapture();
-        [DllImport("user32.DLL", EntryPoint = "SendMessage")]
-        private extern static void SendMessage(System.IntPtr hWnd, int wMsg, int wParam, int lParam);
-
-        //Cancella i caratteri nelle textbox per permettere di effettuare un nuovo accesso
-        private void btnClear_Click(object sender, EventArgs e)
+        private void bLogin_Click(object sender, EventArgs e)
         {
-            textEmail.Clear();
-            textPassword.Clear();
+            try { 
+            
+                    string username = tbUsername.Text;
+                    string password = tbPassword.Text;
 
-            textEmail.Focus();
-        }
+                    if (Controller.EffettuaLogin(username, password)) ///Effettuo il login
+                    {
+                        Lavoratore lavoratore = Controller.GetInfoLavoratore(username, username);
 
-        //Permette di effettuare la registrazione premendo il tasto invio
-        private void textPassword_KeyUp(object sender, KeyEventArgs e)
-        {
-            if (e.KeyValue == 13)
-            {
-                btnLogin.PerformClick();
-            }     
-        }
+                        if (lavoratore != null)
+                            Sessione.Lavoratore = lavoratore;
 
-        /*private void lnkRegistrazione_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)       //QUESTO LINK PERMETTE ALL'UTENTE DI ESSERE REINDIRIZZATO NELLA PAGINA DI REGISTRAZIONE
-        {
-            Registrazione reg = new Registrazione();
-            reg.Show();
-            this.Hide();
-        }*/
+                        CheckLavoraotre();
+                    }
 
-        private void btnClose_Click(object sender, EventArgs e)             //BOTTONE CHE CHIUDE IL PROGRAMMA
-        {
-            Application.Exit();
-        }
+                    else
+                        MessageBox.Show("Username o password non validi", "Errore compilazione campi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
 
-        private void btnMaximize_Click(object sender, EventArgs e)          //GRAZIE A QUESTO BOTTONE E' POSSIBILE MASSIMIZZARE L'ESTENSIONE DELLA PAGINA TANTO QUANTO LA GRANDEZZA DELLO SCHERMO
-        {
-            if (WindowState == FormWindowState.Normal)
-            {
-                this.WindowState = FormWindowState.Maximized;
+                else
+                    lbErrore.Visible = true;
             }
-            else
+
+            catch
             {
-                this.WindowState = FormWindowState.Normal;
+                MessageBox.Show("ERRORE! FormLogin: errore click bottone accesso", "FormLogin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                Application.Exit();
             }
-        }
-
-        private void btnMinimize_Click(object sender, EventArgs e)          //QUESTO BOTTONE PERMETTE DI RIDURRE IL PROGRAMMA A TENDINA
-        {
-            this.WindowState = FormWindowState.Minimized;
-        }
-
-        private void pnlTitolo_MouseDown(object sender, MouseEventArgs e)
-        {
-            ReleaseCapture();
-            SendMessage(this.Handle, 0x112, 0xf012, 0);
-        }
-
-        //Permette il login con l'invio 
-
-        private void btnLogin_Click(object sender, EventArgs e)
-        {
-            bool organizzatore = cbCEOlogin.Checked;
         }
     }
 }

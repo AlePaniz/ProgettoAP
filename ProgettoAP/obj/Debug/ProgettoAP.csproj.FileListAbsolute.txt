@@ -13,3 +13,8 @@ C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.GenerateR
 C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CoreCompileInputs.cache
 C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.exe
 C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.pdb
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.AssemblyReference.cache
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoRDF.Login.resources
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Properties.Resources.resources
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.GenerateResource.cache
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CoreCompileInputs.cache
