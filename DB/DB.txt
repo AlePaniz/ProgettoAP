@@ -48,6 +48,7 @@ CREATE TABLE biglietti(
 
 CREATE TABLE utenti_biglietti(
     ID int AUTO_INCREMENT NOT NULL,
+	Premium ENUM('SI', 'NO') NOT NULL,
     CODUtente int NOT NULL,
     CODBiglietto int NOT NULL,
     PRIMARY KEY(ID),

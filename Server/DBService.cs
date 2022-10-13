@@ -7,6 +7,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using System.Windows.Forms;
+using Server.Models;
 
 namespace Server
 {
@@ -19,6 +20,8 @@ namespace Server
             cn = new MySqlConnection("Datasource = 127.0.0.1;username=root;password=;database=a_p_ticket");
         }
 
+
+        
         public bool Login(string email, string psw, bool organizzatore)
         {
             DataTable dt = new DataTable();
@@ -84,6 +87,34 @@ namespace Server
             {
                 cn.Close();
             }
+        }
+
+        public UtenteS InfoUtente(string e, string psw)
+        {
+            string q = "SELECT* FROM utenti WHERE Email = '" + e + "' AND Password = MD5('" + psw + "')";
+
+            try
+            {
+                string r = Interazione.GetInfo(q);
+                if(r != null)
+                {
+                    return UtenteS.GeneraUtente(r);
+                }
+
+            }
+            catch (Exception ex)
+            {
+                if (Interazione.Connessione != null) //Controllo che la connessione sia stata aperta
+                    Interazione.Connessione.Close(); //Chiudo la connessione
+
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LE INFORMAZIONI DELL'UTENTE: " + ex.ToString());
+                Console.ReadLine();
+            }
+            finally
+            {
+                Console.WriteLine("DATI RICHIESTI AL SERVER CON SUCCESSO");
+            }
+            return null;
         }
 
     }

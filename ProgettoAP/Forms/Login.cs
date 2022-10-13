@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProgettoAP.Models;
 
 namespace ProgettoAP.Forms
 {
@@ -21,32 +22,30 @@ namespace ProgettoAP.Forms
         {
             try { 
             
-                    string username = tbUsername.Text;
-                    string password = tbPassword.Text;
+                string email = tbEmail.Text;
+                string password = tbPsw.Text;
 
-                    if (Controller.EffettuaLogin(username, password)) ///Effettuo il login
-                    {
-                        Lavoratore lavoratore = Controller.GetInfoLavoratore(username, username);
+                if (Controller.EffettuaLogin(email, password)) ///Effettuo il login
+                {
+                    Utente utente = Controller.getInfoUser(email, password);
 
-                        if (lavoratore != null)
-                            Sessione.Lavoratore = lavoratore;
-
-                        CheckLavoraotre();
-                    }
-
-                    else
-                        MessageBox.Show("Username o password non validi", "Errore compilazione campi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                if (utente != null)
+                {
+                    Sessione.Utente = utente;
                 }
 
                 else
-                    lbErrore.Visible = true;
+                    MessageBox.Show("Username o password non validi");
+                }
             }
 
             catch
             {
-                MessageBox.Show("ERRORE! FormLogin: errore click bottone accesso", "FormLogin", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("ERRORE! FormLogin: errore click bottone accesso");
                 Application.Exit();
             }
         }
+
+        
     }
 }

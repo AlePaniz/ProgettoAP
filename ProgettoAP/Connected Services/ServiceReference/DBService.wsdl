@@ -4,6 +4,7 @@
     <xsd:schema targetNamespace="http://tempuri.org/Imports">
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd0" namespace="http://tempuri.org/" />
       <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+      <xsd:import schemaLocation="http://localhost:8733/Design_Time_Addresses/Server/DBService/?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/Server.Models" />
     </xsd:schema>
   </wsdl:types>
   <wsdl:message name="IDBService_Connessione_InputMessage">
@@ -18,6 +19,12 @@
   <wsdl:message name="IDBService_Login_OutputMessage">
     <wsdl:part name="parameters" element="tns:LoginResponse" />
   </wsdl:message>
+  <wsdl:message name="IDBService_InfoUtente_InputMessage">
+    <wsdl:part name="parameters" element="tns:InfoUtente" />
+  </wsdl:message>
+  <wsdl:message name="IDBService_InfoUtente_OutputMessage">
+    <wsdl:part name="parameters" element="tns:InfoUtenteResponse" />
+  </wsdl:message>
   <wsdl:portType name="IDBService">
     <wsdl:operation name="Connessione">
       <wsdl:input wsaw:Action="http://tempuri.org/IDBService/Connessione" message="tns:IDBService_Connessione_InputMessage" />
@@ -26,6 +33,10 @@
     <wsdl:operation name="Login">
       <wsdl:input wsaw:Action="http://tempuri.org/IDBService/Login" message="tns:IDBService_Login_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IDBService/LoginResponse" message="tns:IDBService_Login_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="InfoUtente">
+      <wsdl:input wsaw:Action="http://tempuri.org/IDBService/InfoUtente" message="tns:IDBService_InfoUtente_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IDBService/InfoUtenteResponse" message="tns:IDBService_InfoUtente_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IDBService" type="tns:IDBService">
@@ -41,6 +52,15 @@
     </wsdl:operation>
     <wsdl:operation name="Login">
       <soap:operation soapAction="http://tempuri.org/IDBService/Login" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InfoUtente">
+      <soap:operation soapAction="http://tempuri.org/IDBService/InfoUtente" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

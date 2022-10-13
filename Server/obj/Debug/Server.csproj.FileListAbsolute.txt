@@ -44,4 +44,3 @@ C:\Users\Ale\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.csproj.CoreComp
 C:\Users\Ale\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.csproj.CopyComplete
 C:\Users\Ale\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.exe
 C:\Users\Ale\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.pdb
-C:\Users\Ale\Documents\GitHub\ProgettoAP\Server\obj\Debug\Server.csproj.AssemblyReference.cache

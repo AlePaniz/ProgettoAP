@@ -4,6 +4,7 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using Server.Models;
 
 namespace Server
 {
@@ -16,6 +17,11 @@ namespace Server
 
 
         [OperationContract]
-        bool Login(string user, string psw, bool organizzatore);
+        bool Login(string email, string psw, bool organizzatore);
+
+        [OperationContract]
+        UtenteS InfoUtente(string e, string psw);
+
+
     }
 }

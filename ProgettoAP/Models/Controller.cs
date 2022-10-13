@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
+using System.Windows.Forms;
 namespace ProgettoAP.Models
 {
     //Interazione Client e server
@@ -17,6 +17,26 @@ namespace ProgettoAP.Models
 
             else
                 return false;
+        }
+
+        public static Utente getInfoUser(string email, string psw)
+        {
+            try
+            {
+                Utente utente = Utente.UtenteSToUUtente(Sessione.ServerDB.InfoUtente(email, psw));
+                if(utente.Id != 0)
+                {
+                    return utente;
+                }
+                return null;
+            }
+
+            catch
+            {
+                MessageBox.Show("ERRORE! MetodoGetInfoUser nel cotnroller");
+                Application.Exit();
+            }
+            return null;
         }
     }
 }

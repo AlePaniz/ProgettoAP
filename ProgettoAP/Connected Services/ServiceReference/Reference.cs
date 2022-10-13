@@ -22,10 +22,16 @@ namespace ProgettoAP.ServiceReference {
         System.Threading.Tasks.Task ConnessioneAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Login", ReplyAction="http://tempuri.org/IDBService/LoginResponse")]
-        bool Login(string user, string psw, bool organizzatore);
+        bool Login(string email, string psw, bool organizzatore);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Login", ReplyAction="http://tempuri.org/IDBService/LoginResponse")]
-        System.Threading.Tasks.Task<bool> LoginAsync(string user, string psw, bool organizzatore);
+        System.Threading.Tasks.Task<bool> LoginAsync(string email, string psw, bool organizzatore);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/InfoUtente", ReplyAction="http://tempuri.org/IDBService/InfoUtenteResponse")]
+        Server.Models.UtenteS InfoUtente(string e, string psw);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/InfoUtente", ReplyAction="http://tempuri.org/IDBService/InfoUtenteResponse")]
+        System.Threading.Tasks.Task<Server.Models.UtenteS> InfoUtenteAsync(string e, string psw);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -63,12 +69,20 @@ namespace ProgettoAP.ServiceReference {
             return base.Channel.ConnessioneAsync();
         }
         
-        public bool Login(string user, string psw, bool organizzatore) {
-            return base.Channel.Login(user, psw, organizzatore);
+        public bool Login(string email, string psw, bool organizzatore) {
+            return base.Channel.Login(email, psw, organizzatore);
         }
         
-        public System.Threading.Tasks.Task<bool> LoginAsync(string user, string psw, bool organizzatore) {
-            return base.Channel.LoginAsync(user, psw, organizzatore);
+        public System.Threading.Tasks.Task<bool> LoginAsync(string email, string psw, bool organizzatore) {
+            return base.Channel.LoginAsync(email, psw, organizzatore);
+        }
+        
+        public Server.Models.UtenteS InfoUtente(string e, string psw) {
+            return base.Channel.InfoUtente(e, psw);
+        }
+        
+        public System.Threading.Tasks.Task<Server.Models.UtenteS> InfoUtenteAsync(string e, string psw) {
+            return base.Channel.InfoUtenteAsync(e, psw);
         }
     }
 }

@@ -1,14 +1,13 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Server.Models;
+using System.Windows.Forms;
 
-namespace ProgettoAP.Models
-{
-    class Utente
+namespace Server.Models
+{       //Utente visibile nel server  Server
+    public class UtenteS
     {
         //Attributi
         private int id;
@@ -17,13 +16,14 @@ namespace ProgettoAP.Models
         private string username;
         private string email;
         private string password;
-        
+
         //Costruttore Vuoto
-        public Utente() { }
+        public UtenteS() { }
 
         //Costruttore della classe Utente
-        public Utente(int id, string nome, string cognome, string username, string email, string password)
+        public UtenteS(int id, string nome, string cognome, string username, string email, string password)
         {
+            this.id = id;
             this.nome = nome;
             this.cognome = cognome;
             this.username = username;
@@ -31,7 +31,7 @@ namespace ProgettoAP.Models
             this.password = password;
         }
 
-        
+
         public string Nome { get => nome; set => nome = value; }
         public string Cognome { get => cognome; set => cognome = value; }
         public string Username { get => username; set => username = value; }
@@ -40,12 +40,28 @@ namespace ProgettoAP.Models
         public int Id { get => id; set => id = value; }
 
 
-        //Metodi
+        //Utente dal db 
+        public static UtenteS GeneraUtente(string s){
+            UtenteS u = new UtenteS();
 
-        //Convertitore utente server in utente client
-        public static Utente UtenteSToUUtente(UtenteS u)
-        {
-            return new Utente(u.Id, u.Nome, u.Cognome, u.Username, u.Email, u.Password);
+            try
+            {
+                List<string> uInfo = s.Split('\n').ToList();
+                u.id = Int16.Parse(uInfo.ElementAt(0));
+                u.nome = uInfo.ElementAt(1);
+                u.cognome = uInfo.ElementAt(2);
+                u.username = uInfo.ElementAt(3);
+                u.email = uInfo.ElementAt(4);
+                u.password = uInfo.ElementAt(5);
+
+            }
+
+            catch   
+            {
+                MessageBox.Show("ERRORE NEL METODO GENERA UTENTE");
+                Application.Exit();
+            }
+            return u;
         }
     }
 }

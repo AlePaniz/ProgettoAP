@@ -49,6 +49,47 @@ namespace Server.Models
 
             return false;
         }
+        
 
+        //metodo che esegue query che prendono informazioni da il db 
+        public static string GetInfo(string q)
+        {
+            try
+            {
+                if (ReadingQuery(q))
+                {
+                    using (MySqlCommand cmd = Connessione.CreateCommand())
+                    {
+                        cmd.CommandText = q;
+                        string r = "";
+                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        {
+                            while (reader.Read())
+                            {
+                                for (int i = 0; i < reader.FieldCount; i++)
+                                    r += reader[i].ToString() + "-";
+
+                                r += "\n";
+                            }
+
+                            return r;
+                        }
+                    }
+                }
+                else
+                {
+                    return null;
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERRORE!!! Metodo EseguiQuery_Lettura in InterazioneDB: " + ex.ToString());
+                Console.ReadLine();
+            }
+
+            return null;
+        }
     }
+
+    
 }
