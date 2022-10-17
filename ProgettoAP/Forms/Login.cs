@@ -20,18 +20,21 @@ namespace ProgettoAP.Forms
 
         private void bLogin_Click(object sender, EventArgs e)
         {
+            bool ceoLogin = cbCeo.Checked;
+
             try { 
             
                 string email = tbEmail.Text;
                 string password = tbPsw.Text;
-
-                if (Controller.EffettuaLogin(email, password)) ///Effettuo il login
+                
+                if (Controller.EffettuaLoginUtente(email, password)) ///Effettuo il login
                 {
                     Utente utente = Controller.getInfoUser(email, password);
 
                 if (utente != null)
                 {
                     Sessione.Utente = utente;
+                        MessageBox.Show("Login effettuato con successo: " + utente.Nome);     
                 }
 
                 else

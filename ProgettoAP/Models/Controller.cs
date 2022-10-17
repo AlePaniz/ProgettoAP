@@ -4,15 +4,17 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using ProgettoAP.ServiceReference;
+
 namespace ProgettoAP.Models
 {
     //Interazione Client e server
     class Controller
     {
 
-        public static bool EffettuaLogin(string user, string psw)
+        public static bool EffettuaLoginUtente(string email, string psw)
         {
-            if (Sessione.ServerDB.Login(user, psw, true))
+            if (true)//Sessione.ServerDB.Login(email, psw, false))
                 return true;
 
             else
@@ -23,8 +25,10 @@ namespace ProgettoAP.Models
         {
             try
             {
-                Utente utente = Utente.UtenteSToUUtente(Sessione.ServerDB.InfoUtente(email, psw));
-                if(utente.Id != 0)
+                DBServiceClient server = new DBServiceClient();
+
+                Utente utente = Utente.UtenteSToUUtente(server.InfoUtente(email, psw));
+                if (utente.Id != 0)
                 {
                     return utente;
                 }
@@ -33,10 +37,22 @@ namespace ProgettoAP.Models
 
             catch
             {
-                MessageBox.Show("ERRORE! MetodoGetInfoUser nel cotnroller");
+                MessageBox.Show("ERRORE! MetodoGetInfoUser nel cotroller");
                 Application.Exit();
             }
             return null;
         }
+
+        public static bool EffettuaLoginCeo(string email, string psw)
+        {
+            DBServiceClient server = new DBServiceClient();
+            if(server.Login(email, psw, true))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
+
+

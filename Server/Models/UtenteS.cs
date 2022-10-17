@@ -46,7 +46,7 @@ namespace Server.Models
 
             try
             {
-                List<string> uInfo = s.Split('\n').ToList();
+                List<string> uInfo = s.Split('-').ToList();
                 u.id = Int16.Parse(uInfo.ElementAt(0));
                 u.nome = uInfo.ElementAt(1);
                 u.cognome = uInfo.ElementAt(2);
@@ -58,7 +58,7 @@ namespace Server.Models
 
             catch   
             {
-                MessageBox.Show("ERRORE NEL METODO GENERA UTENTE");
+                MessageBox.Show(s);
                 Application.Exit();
             }
             return u;

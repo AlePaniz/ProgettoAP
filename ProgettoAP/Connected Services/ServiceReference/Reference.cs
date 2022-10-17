@@ -22,10 +22,10 @@ namespace ProgettoAP.ServiceReference {
         System.Threading.Tasks.Task ConnessioneAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Login", ReplyAction="http://tempuri.org/IDBService/LoginResponse")]
-        bool Login(string email, string psw, bool organizzatore);
+        bool Login(string email, string psw);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Login", ReplyAction="http://tempuri.org/IDBService/LoginResponse")]
-        System.Threading.Tasks.Task<bool> LoginAsync(string email, string psw, bool organizzatore);
+        System.Threading.Tasks.Task<bool> LoginAsync(string email, string psw);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/InfoUtente", ReplyAction="http://tempuri.org/IDBService/InfoUtenteResponse")]
         Server.Models.UtenteS InfoUtente(string e, string psw);
@@ -69,12 +69,12 @@ namespace ProgettoAP.ServiceReference {
             return base.Channel.ConnessioneAsync();
         }
         
-        public bool Login(string email, string psw, bool organizzatore) {
-            return base.Channel.Login(email, psw, organizzatore);
+        public bool Login(string email, string psw) {
+            return base.Channel.Login(email, psw);
         }
         
-        public System.Threading.Tasks.Task<bool> LoginAsync(string email, string psw, bool organizzatore) {
-            return base.Channel.LoginAsync(email, psw, organizzatore);
+        public System.Threading.Tasks.Task<bool> LoginAsync(string email, string psw) {
+            return base.Channel.LoginAsync(email, psw);
         }
         
         public Server.Models.UtenteS InfoUtente(string e, string psw) {

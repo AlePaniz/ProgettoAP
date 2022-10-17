@@ -13,11 +13,6 @@ C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.GenerateR
 C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CoreCompileInputs.cache
 C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.exe
 C:\Users\Ale\Desktop\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.pdb
-C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.AssemblyReference.cache
-C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Properties.Resources.resources
-C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.GenerateResource.cache
-C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CoreCompileInputs.cache
-C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.Login.resources
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\ProgettoAP.exe.config
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\ProgettoAP.exe
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\ProgettoAP.pdb
@@ -47,6 +42,11 @@ C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\System.Buffers.xml
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\K4os.Compression.LZ4.xml
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\K4os.Hash.xxHash.xml
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.AssemblyReference.cache
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.Login.resources
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Properties.Resources.resources
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.GenerateResource.cache
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CoreCompileInputs.cache
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CopyComplete
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.exe
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.pdb

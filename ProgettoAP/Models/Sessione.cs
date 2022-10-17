@@ -11,6 +11,7 @@ namespace ProgettoAP.Models
     {
         private static Utente utente;
         private static DBServiceClient serverDB;
+        
 
         public static DBServiceClient ServerDB { get => serverDB; set => serverDB = value; }
         public static Utente Utente { get => utente; set => utente = value; }

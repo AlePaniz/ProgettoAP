@@ -62,6 +62,7 @@
     <Compile Include="Forms\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ceo_organizzazioni.cs" />
     <Compile Include="Models\Controller.cs" />
     <Compile Include="Models\Sessione.cs" />
     <Compile Include="Models\Utente.cs" />

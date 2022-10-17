@@ -16,7 +16,6 @@
       <xs:sequence>
         <xs:element minOccurs="0" name="email" nillable="true" type="xs:string" />
         <xs:element minOccurs="0" name="psw" nillable="true" type="xs:string" />
-        <xs:element minOccurs="0" name="organizzatore" type="xs:boolean" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

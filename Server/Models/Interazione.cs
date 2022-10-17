@@ -19,27 +19,31 @@ namespace Server.Models
 
         public static bool ReadingQuery(string q)
         {
+            string cs = @"server=localhost;userid=root;password=;database=a_p_ticket";
+            var con = new MySqlConnection(cs);
+
+            con.Open();
+
+            var cmd = new MySqlCommand(q, con);
+            MySqlDataReader rdr;
+
             try
-            {
-                using (MySqlCommand cmd = Connessione.CreateCommand())
+            {   
+                cmd.CommandText = q;
+
+                using (rdr = cmd.ExecuteReader())
                 {
-                    cmd.CommandText = q;
+                    int cont = 0;
 
-                    using (MySqlDataReader reader = cmd.ExecuteReader())
-                    {
-                        int cont = 0;
+                    while (rdr.Read())
+                        cont++;
 
-                        while (reader.Read())
-                            cont++;
+                    if (cont != 0)
+                        return true;
 
-                        if (cont != 0)
-                            return true;
-
-                        else
-                            return false;
-                    }
-
-                }
+                    else
+                        return false;
+                }       
             }
             catch(Exception ex)
             {
@@ -54,27 +58,33 @@ namespace Server.Models
         //metodo che esegue query che prendono informazioni da il db 
         public static string GetInfo(string q)
         {
+            string cs = @"server=localhost;userid=root;password=;database=a_p_ticket";
+            var con = new MySqlConnection(cs);
+
+            con.Open();
+
+            var cmd = new MySqlCommand(q, con);
+            MySqlDataReader rdr;
             try
             {
                 if (ReadingQuery(q))
                 {
-                    using (MySqlCommand cmd = Connessione.CreateCommand())
-                    {
+                    
                         cmd.CommandText = q;
                         string r = "";
-                        using (MySqlDataReader reader = cmd.ExecuteReader())
+                        using (rdr = cmd.ExecuteReader())
                         {
-                            while (reader.Read())
+                            while (rdr.Read())
                             {
-                                for (int i = 0; i < reader.FieldCount; i++)
-                                    r += reader[i].ToString() + "-";
+                                for (int i = 0; i < rdr.FieldCount; i++)
+                                    r += rdr[i].ToString() + "-";
 
                                 r += "\n";
                             }
 
                             return r;
                         }
-                    }
+                    
                 }
                 else
                 {

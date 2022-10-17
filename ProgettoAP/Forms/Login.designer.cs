@@ -34,6 +34,7 @@ namespace ProgettoAP.Forms
             this.label2 = new System.Windows.Forms.Label();
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbPsw = new System.Windows.Forms.TextBox();
+            this.cbCeo = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
             // bLogin
@@ -78,11 +79,22 @@ namespace ProgettoAP.Forms
             this.tbPsw.Size = new System.Drawing.Size(100, 26);
             this.tbPsw.TabIndex = 4;
             // 
+            // cbCeo
+            // 
+            this.cbCeo.AutoSize = true;
+            this.cbCeo.Location = new System.Drawing.Point(546, 198);
+            this.cbCeo.Name = "cbCeo";
+            this.cbCeo.Size = new System.Drawing.Size(107, 24);
+            this.cbCeo.TabIndex = 5;
+            this.cbCeo.Text = "Login Ceo";
+            this.cbCeo.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 648);
+            this.Controls.Add(this.cbCeo);
             this.Controls.Add(this.tbPsw);
             this.Controls.Add(this.tbEmail);
             this.Controls.Add(this.label2);
@@ -102,5 +114,6 @@ namespace ProgettoAP.Forms
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbPsw;
+        private System.Windows.Forms.CheckBox cbCeo;
     }
 }

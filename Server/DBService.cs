@@ -27,7 +27,6 @@ namespace Server
             DataTable dt = new DataTable();
             DataTable id = new DataTable();
             DataTable dataTable = new DataTable();
-
             cn.Open();
 
             try
@@ -83,10 +82,7 @@ namespace Server
             {
                 throw new Exception();
             }
-            finally
-            {
-                cn.Close();
-            }
+            return false;
         }
 
         public UtenteS InfoUtente(string e, string psw)
