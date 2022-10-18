@@ -22,6 +22,8 @@ namespace Server
         [OperationContract]
         UtenteS InfoUtente(string e, string psw);
 
+        [OperationContract]
+        Ceo_organizzazioniS InfoCeo(string e, string psw);
 
     }
 }

@@ -8,12 +8,13 @@ using ProgettoAP.ServiceReference;
 
 namespace ProgettoAP.Models
 {
+   
     //Interazione Client e server
     class Controller
     {
-        
         public static bool EffettuaLoginUtente(string email, string psw)
         {
+
             if (Sessione.ServerDB.Login(email, psw, false))
                 return true;
 
@@ -35,12 +36,30 @@ namespace ProgettoAP.Models
 
             catch
             {
-                MessageBox.Show("ERRORE! MetodoGetInfoUser nel cotroller");
+                MessageBox.Show("ERRORE! MetodoGetInfoUser nel controller");
                 Application.Exit();
             }
             return null;
         }
 
+        public static Ceo_organizzazioni getInfoCeo(string email, string psw){
+            try
+            {
+                DBServiceClient server = new DBServiceClient();
+                Ceo_organizzazioni ceo = Ceo_organizzazioni.CeoSToCeo(server.InfoCeo(email, psw));
+                if(ceo.Id != 0)
+                {
+                    return ceo;
+                }
+                return null;        
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo GetInfoCeo nel controller");
+                Application.Exit();
+            }
+            return null;
+        }
         public static bool EffettuaLoginCeo(string email, string psw)
         {
             DBServiceClient server = new DBServiceClient();

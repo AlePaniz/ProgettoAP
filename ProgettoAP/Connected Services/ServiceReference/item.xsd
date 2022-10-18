@@ -42,4 +42,19 @@
       </xs:sequence>
     </xs:complexType>
   </xs:element>
+  <xs:element name="InfoCeo">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="e" nillable="true" type="xs:string" />
+        <xs:element minOccurs="0" name="psw" nillable="true" type="xs:string" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="InfoCeoResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/Server.Models" minOccurs="0" name="InfoCeoResult" nillable="true" type="q2:Ceo_organizzazioniS" />
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

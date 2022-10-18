@@ -101,6 +101,7 @@
   <ItemGroup>
     <Compile Include="DBService.cs" />
     <Compile Include="IDBService.cs" />
+    <Compile Include="Models\Ceo_organizzazioniS.cs" />
     <Compile Include="Models\Interazione.cs" />
     <Compile Include="Models\UtenteS.cs" />
     <Compile Include="Program.cs" />

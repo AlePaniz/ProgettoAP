@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Server.Models;
+using System.Windows.Forms;
 
-namespace ProgettoAP.Models
+namespace Server.Models
 {
-    class Ceo_organizzazioni
+    public class Ceo_organizzazioniS
     {
         //Atttributi
         private int id;
@@ -17,9 +17,9 @@ namespace ProgettoAP.Models
         private string password;
         private int codOrganizzazione;
 
-        public Ceo_organizzazioni() { }
+        public Ceo_organizzazioniS() { }
 
-        public Ceo_organizzazioni(int id, string nome, string cognome, string email, string password, int codOrganizzazione)
+        public Ceo_organizzazioniS(int id, string nome, string cognome, string email, string password, int codOrganizzazione)
         {
             this.id = id;
             this.nome = nome;
@@ -35,12 +35,30 @@ namespace ProgettoAP.Models
         public string Email { get => email; set => email = value; }
         public string Password { get => password; set => password = value; }
         public int CodOrganizzazione { get => codOrganizzazione; set => codOrganizzazione = value; }
-
-        //Metodi
-        public static Ceo_organizzazioni CeoSToCeo(Ceo_organizzazioniS c)
+        
+        //CEO DAL DB
+        public static Ceo_organizzazioniS GeneraCeo(string s)
         {
-            return new Ceo_organizzazioni(c.Id, c.Nome, c.Cognome, c.Email, c.Password, c.CodOrganizzazione);
+            Ceo_organizzazioniS c = new Ceo_organizzazioniS();
+            try
+            {
+                List<string> cInfo = s.Split('-').ToList();
+                c.id = Int16.Parse(cInfo.ElementAt(0));
+                c.nome = cInfo.ElementAt(1);
+                c.cognome = cInfo.ElementAt(2);
+                c.email = cInfo.ElementAt(3);
+                c.password = cInfo.ElementAt(4);
+                c.CodOrganizzazione = Int16.Parse(cInfo.ElementAt(5));
 
+            }
+
+            catch
+            {
+                MessageBox.Show(s);
+                Application.Exit();
+            }
+            return c;
         }
+
     }
 }

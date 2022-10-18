@@ -35,7 +35,7 @@ namespace ProgettoAP.Forms
                         if (utente != null)
                         {
                             Sessione.Utente = utente;
-                            MessageBox.Show("Login effettuato con successo: " + utente.Nome);
+                            MessageBox.Show("Login utente effettuato con successo: " + utente.Nome);
                         }
 
                         else
@@ -57,12 +57,20 @@ namespace ProgettoAP.Forms
                 {
                     if (Controller.EffettuaLoginCeo(email, password))
                     {
-
+                        Ceo_organizzazioni ceo = Controller.getInfoCeo(email, password);
+                        if (ceo != null)
+                        {
+                            Sessione.Ceo = ceo;
+                            MessageBox.Show("Login ceo effettuato con successo: " + ceo.Nome);
+                        }
+                        else
+                            MessageBox.Show("Username o password non validi");
                     }
                 }
                 catch
                 {
-
+                    MessageBox.Show("ERRORE! FormLogin(CEO): errore click bottone accesso");
+                    Application.Exit();
                 }
             }
 

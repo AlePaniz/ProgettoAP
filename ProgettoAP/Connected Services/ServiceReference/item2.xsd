@@ -11,4 +11,15 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="UtenteS" nillable="true" type="tns:UtenteS" />
+  <xs:complexType name="Ceo_organizzazioniS">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CodOrganizzazione" type="xs:int" />
+      <xs:element minOccurs="0" name="Cognome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Email" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Id" type="xs:int" />
+      <xs:element minOccurs="0" name="Nome" nillable="true" type="xs:string" />
+      <xs:element minOccurs="0" name="Password" nillable="true" type="xs:string" />
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Ceo_organizzazioniS" nillable="true" type="tns:Ceo_organizzazioniS" />
 </xs:schema>
