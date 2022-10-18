@@ -11,10 +11,10 @@ namespace ProgettoAP.Models
     //Interazione Client e server
     class Controller
     {
-
+        
         public static bool EffettuaLoginUtente(string email, string psw)
         {
-            if (true)//Sessione.ServerDB.Login(email, psw, false))
+            if (Sessione.ServerDB.Login(email, psw, false))
                 return true;
 
             else
@@ -25,9 +25,7 @@ namespace ProgettoAP.Models
         {
             try
             {
-                DBServiceClient server = new DBServiceClient();
-
-                Utente utente = Utente.UtenteSToUUtente(server.InfoUtente(email, psw));
+                Utente utente = Utente.UtenteSToUUtente(Sessione.ServerDB.InfoUtente(email, psw));
                 if (utente.Id != 0)
                 {
                     return utente;

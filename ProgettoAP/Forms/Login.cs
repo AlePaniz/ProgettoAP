@@ -21,34 +21,51 @@ namespace ProgettoAP.Forms
         private void bLogin_Click(object sender, EventArgs e)
         {
             bool ceoLogin = cbCeo.Checked;
+            string email = tbEmail.Text;
+            string password = tbPsw.Text;
 
-            try { 
-            
-                string email = tbEmail.Text;
-                string password = tbPsw.Text;
-                
-                if (Controller.EffettuaLoginUtente(email, password)) ///Effettuo il login
-                {
-                    Utente utente = Controller.getInfoUser(email, password);
-
-                if (utente != null)
-                {
-                    Sessione.Utente = utente;
-                        MessageBox.Show("Login effettuato con successo: " + utente.Nome);     
-                }
-
-                else
-                    MessageBox.Show("Username o password non validi");
-                }
-            }
-
-            catch
+            if (!ceoLogin)//login UTENTE
             {
-                MessageBox.Show("ERRORE! FormLogin: errore click bottone accesso");
-                Application.Exit();
-            }
-        }
+                try
+                {
+                    if (Controller.EffettuaLoginUtente(email, password)) ///Effettuo il login
+                    {
+                        Utente utente = Controller.getInfoUser(email, password);
 
-        
+                        if (utente != null)
+                        {
+                            Sessione.Utente = utente;
+                            MessageBox.Show("Login effettuato con successo: " + utente.Nome);
+                        }
+
+                        else
+                            MessageBox.Show("Username o password non validi");
+                    }
+                }
+
+                catch
+                {
+                    MessageBox.Show("ERRORE! FormLogin: errore click bottone accesso");
+                    Application.Exit();
+                }
+            }
+
+            //login CEO
+            else
+            {
+                try
+                {
+                    if (Controller.EffettuaLoginCeo(email, password))
+                    {
+
+                    }
+                }
+                catch
+                {
+
+                }
+            }
+
+        }  
     }
 }
