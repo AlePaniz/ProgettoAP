@@ -38,6 +38,12 @@ namespace ProgettoAP.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/InfoCeo", ReplyAction="http://tempuri.org/IDBService/InfoCeoResponse")]
         System.Threading.Tasks.Task<Server.Models.Ceo_organizzazioniS> InfoCeoAsync(string e, string psw);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/GetNomiOrganizzazioni", ReplyAction="http://tempuri.org/IDBService/GetNomiOrganizzazioniResponse")]
+        string GetNomiOrganizzazioni();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/GetNomiOrganizzazioni", ReplyAction="http://tempuri.org/IDBService/GetNomiOrganizzazioniResponse")]
+        System.Threading.Tasks.Task<string> GetNomiOrganizzazioniAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -97,6 +103,14 @@ namespace ProgettoAP.ServiceReference {
         
         public System.Threading.Tasks.Task<Server.Models.Ceo_organizzazioniS> InfoCeoAsync(string e, string psw) {
             return base.Channel.InfoCeoAsync(e, psw);
+        }
+        
+        public string GetNomiOrganizzazioni() {
+            return base.Channel.GetNomiOrganizzazioni();
+        }
+        
+        public System.Threading.Tasks.Task<string> GetNomiOrganizzazioniAsync() {
+            return base.Channel.GetNomiOrganizzazioniAsync();
         }
     }
 }

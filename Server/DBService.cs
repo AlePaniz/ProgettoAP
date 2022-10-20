@@ -99,5 +99,32 @@ namespace Server
             return null;
         }
 
+        public string GetNomiOrganizzazioni()
+        {
+            string q= "SELECT nome " +
+                      "FROM organizzazione";
+            try
+            {
+                string r = Interazione.GetInfo(q);
+                if (r != null)
+                {
+                    return r;
+                }
+
+            }
+            catch(Exception ex)
+            {
+                if (Interazione.Connessione != null) //Controllo che la connessione sia stata aperta
+                    Interazione.Connessione.Close(); //Chiudo la connessione
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER I NOMI DELLE ORGANIZZAZIONI: " + ex.ToString());
+                Console.ReadLine();
+
+            }
+            finally
+            {
+                Console.WriteLine("DATI RICHIESTI PER LE ORGANIZZAZIONI AL SERVER CON SUCCESSO");
+            }
+            return "";
+        }
     }
 }

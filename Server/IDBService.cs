@@ -25,5 +25,8 @@ namespace Server
         [OperationContract]
         Ceo_organizzazioniS InfoCeo(string e, string psw);
 
+        [OperationContract]
+        string GetNomiOrganizzazioni();
+
     }
 }

@@ -74,6 +74,13 @@ namespace ProgettoAP.Forms
                 }
             }
 
-        }  
+        }
+
+        private void lbRegistrazione_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            Registrazione reg = new Registrazione();
+            reg.Show();
+            this.Hide();
+        }
     }
 }

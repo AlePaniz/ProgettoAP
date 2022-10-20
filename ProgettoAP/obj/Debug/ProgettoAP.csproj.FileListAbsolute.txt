@@ -50,3 +50,4 @@ C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.CopyComplete
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.exe
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.pdb
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.Registrazione.resources

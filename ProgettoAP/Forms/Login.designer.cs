@@ -35,6 +35,8 @@ namespace ProgettoAP.Forms
             this.tbEmail = new System.Windows.Forms.TextBox();
             this.tbPsw = new System.Windows.Forms.TextBox();
             this.cbCeo = new System.Windows.Forms.CheckBox();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.lbRegistrazione = new System.Windows.Forms.LinkLabel();
             this.SuspendLayout();
             // 
             // bLogin
@@ -89,11 +91,35 @@ namespace ProgettoAP.Forms
             this.cbCeo.Text = "Login Ceo";
             this.cbCeo.UseVisualStyleBackColor = true;
             // 
+            // linkLabel1
+            // 
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Location = new System.Drawing.Point(0, 0);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(80, 20);
+            this.linkLabel1.TabIndex = 6;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "linkLabel1";
+            // 
+            // lbRegistrazione
+            // 
+            this.lbRegistrazione.AutoSize = true;
+            this.lbRegistrazione.LinkColor = System.Drawing.Color.Black;
+            this.lbRegistrazione.Location = new System.Drawing.Point(576, 289);
+            this.lbRegistrazione.Name = "lbRegistrazione";
+            this.lbRegistrazione.Size = new System.Drawing.Size(77, 20);
+            this.lbRegistrazione.TabIndex = 7;
+            this.lbRegistrazione.TabStop = true;
+            this.lbRegistrazione.Text = "Registrati";
+            this.lbRegistrazione.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lbRegistrazione_LinkClicked);
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1176, 648);
+            this.Controls.Add(this.lbRegistrazione);
+            this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.cbCeo);
             this.Controls.Add(this.tbPsw);
             this.Controls.Add(this.tbEmail);
@@ -115,5 +141,7 @@ namespace ProgettoAP.Forms
         private System.Windows.Forms.TextBox tbEmail;
         private System.Windows.Forms.TextBox tbPsw;
         private System.Windows.Forms.CheckBox cbCeo;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lbRegistrazione;
     }
 }

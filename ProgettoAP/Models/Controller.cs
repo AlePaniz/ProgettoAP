@@ -69,6 +69,12 @@ namespace ProgettoAP.Models
             }
             return false;
         }
+
+        public static string GetNomeOrganizzazioni()
+        {
+            string s = Sessione.ServerDB.GetNomiOrganizzazioni();
+            return s;
+        }
     }
 }
 
