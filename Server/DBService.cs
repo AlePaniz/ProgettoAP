@@ -126,5 +126,37 @@ namespace Server
             }
             return "";
         }
+
+        public bool Registrazione(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg)
+        {
+            try
+            {
+                if (isOrganizzatore)
+                {
+                    string qIdOrg = "SELECT ID " +
+                                    "FROM organizzazione " +
+                                    "WHERE Nome = '" + nomeOrg + "'";
+                    string r = Interazione.GetInfo(qIdOrg);
+                    List<string> info = r.Split('-').ToList();
+                    int idOrg = Int16.Parse(info.ElementAt(0));
+                    
+                    if(idOrg != 0)
+                    {
+                        string query = $"INSERT INTO `ceo_organizzazioni` (`ID`, `Nome`, `Cognome`, `Email`, `Password`, `CODOrganizzazione`) VALUES ('', '" + nome + "', '" + cognome + "', '" + email + "', MD5('" + password + "'), '" + idOrg + "');";     //INSERIAMO NEL DATABASE I DATI INSERITI NELLE TEXTBOX E SELEZIONATI NELLA COMBOBOX
+                        return Interazione.WritingQuery(query);
+                    }
+                }
+                else
+                {
+                    string query = $"INSERT INTO `utenti` (`ID`, `Nome`, `Cognome`, `Username`, `Email`, `Password`) VALUES ('', '" + nome + "', '" + cognome + "', '" + username + "', '" + email + "', MD5('" + password + "'));";           //INSERIMENTO DATI
+                    return Interazione.WritingQuery(query);
+                }
+            }
+            catch (Exception)
+            {
+                throw new Exception();
+            }
+            return false;
+        }
     }
 }

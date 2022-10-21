@@ -48,5 +48,50 @@ namespace ProgettoAP.Forms
                 cbOrg.Hide();
             }
         }
+
+        private void btnReg_Click(object sender, EventArgs e)
+        {
+            if (checkBoxOrg.Checked)
+            {
+                string nomeOrg = this.cbOrg.GetItemText(this.cbOrg.SelectedItem);
+                if ((String.IsNullOrEmpty(tbEmail.Text)) || (String.IsNullOrEmpty(tbPassword.Text)) || (String.IsNullOrEmpty(tbNome.Text)) || (String.IsNullOrEmpty(tbCognome.Text)))
+                {
+                    MessageBox.Show("E' necessario compilare tutti i campi");
+                }
+                else
+                {
+                    try
+                    {
+                        if (Controller.RegistraCeo(tbNome.Text, tbCognome.Text, tbEmail.Text, tbPassword.Text, nomeOrg.Remove(0, 1)))
+                            MessageBox.Show("Registrazione effettuata con successo");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("ERRORE! FormRegistrazione: errore click bottone registrati");
+                        Application.Exit();
+                    }
+                }
+            }
+            else
+            {
+                if ((String.IsNullOrEmpty(tbEmail.Text)) || (String.IsNullOrEmpty(tbPassword.Text)) || (String.IsNullOrEmpty(tbNome.Text)) || (String.IsNullOrEmpty(tbCognome.Text)) || (String.IsNullOrEmpty(tbUser.Text)))
+                {
+                    MessageBox.Show("E' necessario compilare tutti i campi");
+                }
+                else
+                {
+                    try
+                    {
+                        if (Controller.RegistraUtente(tbNome.Text, tbCognome.Text, tbUser.Text, tbEmail.Text, tbPassword.Text))
+                            MessageBox.Show("Registrazione Effettuata con successo");
+                    }
+                    catch
+                    {
+                        MessageBox.Show("ERRORE! FormRegistrazione: errore click bottone registrati");
+                        Application.Exit();
+                    }
+                }
+            }
+        }
     }
 }

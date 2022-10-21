@@ -45,8 +45,7 @@ namespace ProgettoAP.Models
         public static Ceo_organizzazioni getInfoCeo(string email, string psw){
             try
             {
-                DBServiceClient server = new DBServiceClient();
-                Ceo_organizzazioni ceo = Ceo_organizzazioni.CeoSToCeo(server.InfoCeo(email, psw));
+                Ceo_organizzazioni ceo = Ceo_organizzazioni.CeoSToCeo(Sessione.ServerDB.InfoCeo(email, psw));
                 if(ceo.Id != 0)
                 {
                     return ceo;
@@ -62,8 +61,7 @@ namespace ProgettoAP.Models
         }
         public static bool EffettuaLoginCeo(string email, string psw)
         {
-            DBServiceClient server = new DBServiceClient();
-            if(server.Login(email, psw, true))
+            if(Sessione.ServerDB.Login(email, psw, true))
             {
                 return true;
             }
@@ -74,6 +72,34 @@ namespace ProgettoAP.Models
         {
             string s = Sessione.ServerDB.GetNomiOrganizzazioni();
             return s;
+        }
+        
+        public static bool RegistraUtente(string nome, string cognome, string username, string email, string password)
+        {
+            try
+            {
+                return Sessione.ServerDB.Registrazione(nome, cognome, username, email, password, false, "");
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo RegistraUtente nel controller");
+                Application.Exit();
+            }
+            return false;
+        }
+
+        public static bool RegistraCeo(string nome, string cognome, string email, string password, string nomeOrg)
+        {
+            try
+            {
+                return Sessione.ServerDB.Registrazione(nome, cognome, "", email, password, true, nomeOrg);
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo RegistraCeo nel controller");
+                Application.Exit();
+            }
+            return false;
         }
     }
 }

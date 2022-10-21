@@ -99,7 +99,48 @@ namespace Server.Models
 
             return null;
         }
-    }
+        public static bool WritingQuery(string q)
+        {
+            string cs = @"server=localhost;userid=root;password=;database=a_p_ticket";
+            var con = new MySqlConnection(cs);
 
-    
+            con.Open();
+
+            var cmd = new MySqlCommand(q, con);
+            MySqlDataReader rdr;
+            try
+            {
+                rdr = cmd.ExecuteReader();
+                while (rdr.Read()) { }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERRORE IN SCRITTURA DI UNA QUERY in InterazioneDB: " + ex.ToString());
+                Console.ReadLine();
+                return false;
+            }
+        }
+
+        public static int GetSingleIntFromDB(string q)
+        {
+            string cs = @"server=localhost;userid=root;password=;database=a_p_ticket";
+            var con = new MySqlConnection(cs);
+
+            con.Open();
+
+            var cmd = new MySqlCommand(q, con);
+
+            try
+            {
+                return (int)cmd.ExecuteScalar();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("ERRORE NELLA LETTURA DI UN SINGOLO RISULTATO: " + ex.ToString());
+                Console.ReadLine();
+                return 0;
+            }
+        }
+    }
 }

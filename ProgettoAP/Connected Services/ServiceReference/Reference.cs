@@ -44,6 +44,12 @@ namespace ProgettoAP.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/GetNomiOrganizzazioni", ReplyAction="http://tempuri.org/IDBService/GetNomiOrganizzazioniResponse")]
         System.Threading.Tasks.Task<string> GetNomiOrganizzazioniAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Registrazione", ReplyAction="http://tempuri.org/IDBService/RegistrazioneResponse")]
+        bool Registrazione(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Registrazione", ReplyAction="http://tempuri.org/IDBService/RegistrazioneResponse")]
+        System.Threading.Tasks.Task<bool> RegistrazioneAsync(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,6 +117,14 @@ namespace ProgettoAP.ServiceReference {
         
         public System.Threading.Tasks.Task<string> GetNomiOrganizzazioniAsync() {
             return base.Channel.GetNomiOrganizzazioniAsync();
+        }
+        
+        public bool Registrazione(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg) {
+            return base.Channel.Registrazione(nome, cognome, username, email, password, isOrganizzatore, nomeOrg);
+        }
+        
+        public System.Threading.Tasks.Task<bool> RegistrazioneAsync(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg) {
+            return base.Channel.RegistrazioneAsync(nome, cognome, username, email, password, isOrganizzatore, nomeOrg);
         }
     }
 }

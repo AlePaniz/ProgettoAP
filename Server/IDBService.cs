@@ -28,5 +28,9 @@ namespace Server
         [OperationContract]
         string GetNomiOrganizzazioni();
 
+        [OperationContract]
+        bool Registrazione(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg);
+
+
     }
 }

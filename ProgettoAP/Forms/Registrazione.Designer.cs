@@ -43,34 +43,35 @@ namespace ProgettoAP.Forms
             this.cbOrg = new System.Windows.Forms.ComboBox();
             this.tOrg = new System.Windows.Forms.Label();
             this.checkBoxOrg = new System.Windows.Forms.CheckBox();
+            this.btnReg = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // tbNome
             // 
             this.tbNome.Location = new System.Drawing.Point(466, 175);
             this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(100, 26);
+            this.tbNome.Size = new System.Drawing.Size(162, 26);
             this.tbNome.TabIndex = 0;
             // 
             // tbCognome
             // 
             this.tbCognome.Location = new System.Drawing.Point(466, 225);
             this.tbCognome.Name = "tbCognome";
-            this.tbCognome.Size = new System.Drawing.Size(100, 26);
+            this.tbCognome.Size = new System.Drawing.Size(162, 26);
             this.tbCognome.TabIndex = 1;
             // 
             // tbPassword
             // 
             this.tbPassword.Location = new System.Drawing.Point(466, 336);
             this.tbPassword.Name = "tbPassword";
-            this.tbPassword.Size = new System.Drawing.Size(100, 26);
+            this.tbPassword.Size = new System.Drawing.Size(162, 26);
             this.tbPassword.TabIndex = 3;
             // 
             // tbEmail
             // 
             this.tbEmail.Location = new System.Drawing.Point(466, 280);
             this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Size = new System.Drawing.Size(100, 26);
+            this.tbEmail.Size = new System.Drawing.Size(162, 26);
             this.tbEmail.TabIndex = 2;
             // 
             // label1
@@ -139,7 +140,7 @@ namespace ProgettoAP.Forms
             this.cbOrg.FormattingEnabled = true;
             this.cbOrg.Location = new System.Drawing.Point(466, 130);
             this.cbOrg.Name = "cbOrg";
-            this.cbOrg.Size = new System.Drawing.Size(121, 28);
+            this.cbOrg.Size = new System.Drawing.Size(162, 28);
             this.cbOrg.TabIndex = 11;
             // 
             // tOrg
@@ -154,7 +155,7 @@ namespace ProgettoAP.Forms
             // checkBoxOrg
             // 
             this.checkBoxOrg.AutoSize = true;
-            this.checkBoxOrg.Location = new System.Drawing.Point(678, 198);
+            this.checkBoxOrg.Location = new System.Drawing.Point(311, 425);
             this.checkBoxOrg.Name = "checkBoxOrg";
             this.checkBoxOrg.Size = new System.Drawing.Size(135, 24);
             this.checkBoxOrg.TabIndex = 13;
@@ -162,11 +163,22 @@ namespace ProgettoAP.Forms
             this.checkBoxOrg.UseVisualStyleBackColor = true;
             this.checkBoxOrg.CheckedChanged += new System.EventHandler(this.checkBoxOrg_CheckedChanged);
             // 
+            // btnReg
+            // 
+            this.btnReg.Location = new System.Drawing.Point(519, 410);
+            this.btnReg.Name = "btnReg";
+            this.btnReg.Size = new System.Drawing.Size(109, 39);
+            this.btnReg.TabIndex = 14;
+            this.btnReg.Text = "Registrati";
+            this.btnReg.UseVisualStyleBackColor = true;
+            this.btnReg.Click += new System.EventHandler(this.btnReg_Click);
+            // 
             // Registrazione
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(973, 572);
+            this.Controls.Add(this.btnReg);
             this.Controls.Add(this.checkBoxOrg);
             this.Controls.Add(this.tOrg);
             this.Controls.Add(this.cbOrg);
@@ -205,5 +217,6 @@ namespace ProgettoAP.Forms
         private System.Windows.Forms.ComboBox cbOrg;
         private System.Windows.Forms.Label tOrg;
         private System.Windows.Forms.CheckBox checkBoxOrg;
+        private System.Windows.Forms.Button btnReg;
     }
 }
