@@ -51,3 +51,4 @@ C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.csproj.
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.exe
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.pdb
 C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.Registrazione.resources
+C:\Users\Ale\Documents\GitHub\ProgettoAP\ProgettoAP\obj\Debug\ProgettoAP.Forms.UserForm.FormListaEventi.resources

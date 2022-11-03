@@ -50,6 +50,12 @@ namespace ProgettoAP.ServiceReference {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/Registrazione", ReplyAction="http://tempuri.org/IDBService/RegistrazioneResponse")]
         System.Threading.Tasks.Task<bool> RegistrazioneAsync(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/EventiDisponibili", ReplyAction="http://tempuri.org/IDBService/EventiDisponibiliResponse")]
+        System.Data.DataTable EventiDisponibili();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IDBService/EventiDisponibili", ReplyAction="http://tempuri.org/IDBService/EventiDisponibiliResponse")]
+        System.Threading.Tasks.Task<System.Data.DataTable> EventiDisponibiliAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -125,6 +131,14 @@ namespace ProgettoAP.ServiceReference {
         
         public System.Threading.Tasks.Task<bool> RegistrazioneAsync(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg) {
             return base.Channel.RegistrazioneAsync(nome, cognome, username, email, password, isOrganizzatore, nomeOrg);
+        }
+        
+        public System.Data.DataTable EventiDisponibili() {
+            return base.Channel.EventiDisponibili();
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> EventiDisponibiliAsync() {
+            return base.Channel.EventiDisponibiliAsync();
         }
     }
 }

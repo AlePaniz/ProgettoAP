@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProgettoAP.Models;
+using ProgettoAP.Forms.UserForm;
 
 namespace ProgettoAP.Forms
 {
@@ -36,6 +37,9 @@ namespace ProgettoAP.Forms
                         {
                             Sessione.Utente = utente;
                             MessageBox.Show("Login utente effettuato con successo: " + utente.Nome);
+                            FormListaEventi fle = new FormListaEventi();
+                            fle.Show();
+                            this.Hide();
                         }
 
                         else

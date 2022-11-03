@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ProgettoAP.ServiceReference;
+using System.Data;
 
 namespace ProgettoAP.Models
 {
@@ -100,6 +101,19 @@ namespace ProgettoAP.Models
                 Application.Exit();
             }
             return false;
+        }
+        public static DataTable GetEventi()
+        {
+            try
+            {
+                return Sessione.ServerDB.EventiDisponibili();
+            }
+            catch
+            {
+                MessageBox.Show("ERRORE! Metodo GetEventi nel controller");
+                Application.Exit();
+            }
+            return null;
         }
     }
 }

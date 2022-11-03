@@ -6,6 +6,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using MySql.Data.MySqlClient;
+using Server.Models;
+using System.Data;
+
 
 namespace Server.Models
 {
@@ -54,6 +57,30 @@ namespace Server.Models
             return false;
         }
         
+        public static DataTable GetEventi(string q)
+        {
+            string cs = @"server=localhost;userid=root;password=;database=a_p_ticket";
+            var con = new MySqlConnection(cs);
+            DataTable dt = new DataTable();
+            con.Open();
+            var cmd = new MySqlCommand(q, con);
+            
+            try
+            {
+                MySqlDataAdapter da = new MySqlDataAdapter(cmd);
+                da.Fill(dt);
+                DataRow[] righe = dt.Select();
+
+               
+                return dt;
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("ERRORE!!! Metodo getEventi in InterazioneDB: " + ex.ToString());
+                Console.ReadLine();
+            }
+            return null;
+        }
 
         //metodo che esegue query che prendono informazioni da il db 
         public static string GetInfo(string q)

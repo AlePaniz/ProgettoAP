@@ -5,6 +5,7 @@ using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
 using Server.Models;
+using System.Data;
 
 namespace Server
 {
@@ -31,6 +32,7 @@ namespace Server
         [OperationContract]
         bool Registrazione(string nome, string cognome, string username, string email, string password, bool isOrganizzatore, string nomeOrg);
 
-
+        [OperationContract]
+        DataTable EventiDisponibili();
     }
 }

@@ -152,11 +152,29 @@ namespace Server
                     return Interazione.WritingQuery(query);
                 }
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw new Exception();
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA REGISTRAZIONE: " + ex.ToString());
+                Console.ReadLine();
             }
             return false;
+        }
+        public DataTable EventiDisponibili()
+        {
+            try
+            {
+                string query = "SELECT e.ID, e.nome, e.genere, e.luogo, e.Nposti " +
+                               "FROM eventi e, organizzazione o, ceo_organizzazioni c " +
+                               "WHERE c.CODOrganizzazione=o.ID AND o.ID=e.CODOrganizzazione ";  //MOSTRO TUTTI GLI EVENTI DISPONIBILI
+                
+                return Interazione.GetEventi(query);
+            }
+            catch(Exception ex)
+            {
+                Console.WriteLine("ERRORE NELL'ESECUZIONE DELLA QUERY PER LA RICERCA DEGLI EVENTI DISPONIBILI: " + ex.ToString());
+                Console.ReadLine();
+            }
+            return null;
         }
     }
 }
